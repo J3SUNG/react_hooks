@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import "./styles.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello React Hooks</h1>
+      <h2>Nice to meet you</h2>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
