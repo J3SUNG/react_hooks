@@ -1,19 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 const useClick = (onClick) => {
-  const element = useRef();
+  const ref = useRef();
+  console.log(ref);
   useEffect(() => {
-    if (element.current) {
-      element.current.addEventListener("click", onClick);
+    const element = ref.current;
+    if (element) {
+      element.addEventListener("click", onClick);
     }
     return () => {
-      if (element.current) {
-        element.current.removeEventListener("click", onClick);
+      if (element) {
+        element.removeEventListener("click", onClick);
       }
     };
-  }, []);
-  return element;
+  }, [onClick]);
+  return ref;
 };
 
 const App = () => {
