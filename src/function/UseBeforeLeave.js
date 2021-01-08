@@ -1,28 +1,18 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useEffect, useCallback } from "react";
 
-const useBeforeLeave = (onBefore) => {
+const UseBeforeLeave = (onBefore) => {
   const handle = (event) => {
     const { clientY } = event;
     if (clientY <= 0) {
       onBefore();
     }
   };
-  useEffect((onBefore) => {
+  useEffect(() => {
     document.addEventListener("mouseleave", handle);
-    return () => document.removeEventListener("mouseleave", handle);
+    return () => {
+      document.removeEventListener("mouseleave", handle);
+    };
   }, []);
 };
 
-const App = () => {
-  const begForLife = () => console.log("Pls dont leave");
-  useBeforeLeave(begForLife);
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default UseBeforeLeave;

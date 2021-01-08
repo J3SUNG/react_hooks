@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
+import NewBeforeLeave from "./component/NewBeforeLeave";
 import NewClick from "./component/NewClick";
 import NewConfirm from "./component/NewConfirm";
 import NewInput from "./component/NewInput";
@@ -15,6 +16,7 @@ const App = () => {
       <NewClick />
       <NewConfirm />
       <NewPreventLeave />
+      <NewBeforeLeave />
     </div>
   );
 };
