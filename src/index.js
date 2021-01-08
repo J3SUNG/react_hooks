@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+import useClick from "./useClick";
 import useInput from "./useInput";
 import useTabs from "./useTabs";
 import useTitle from "./useTitle";
@@ -16,6 +17,8 @@ const content = [
 ];
 
 const App = () => {
+  const onClick = () => console.log("Hello!");
+  const title = useClick(onClick);
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Home"), 3000);
   const maxLen = (value) => value.length <= 10;
@@ -38,6 +41,10 @@ const App = () => {
           ))}
         </div>
         <div>{currentItem.content}</div>
+      </div>
+      <div>
+        <div>useClick</div>
+        <h1 ref={title}> Hello </h1>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import { useEffect, useRef } from "react";
 
 const useClick = (onClick) => {
   const ref = useRef();
@@ -18,15 +17,4 @@ const useClick = (onClick) => {
   return ref;
 };
 
-const App = () => {
-  const sayHello = () => console.log("say hello");
-  const title = useClick(sayHello);
-  return (
-    <div className="App">
-      <h1 ref={title}>Hello</h1>
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default useClick;
