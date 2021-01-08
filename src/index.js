@@ -8,6 +8,7 @@ import NewFadeIn from "./component/NewFadeIn";
 import NewFullscreen from "./component/NewFullscreen";
 import NewInput from "./component/NewInput";
 import NewNetwork from "./component/NewNetwork";
+import NewNotification from "./component/NewNotification";
 import NewPreventLeave from "./component/NewPreventLeave";
 import NewScroll from "./component/NewScroll";
 import NewTabs from "./component/NewTabs";
@@ -23,8 +24,9 @@ const App = () => {
       <NewBeforeLeave />
       <NewFadeIn />
       <NewNetwork /> 
-      <NewScroll /> */}
-      <NewFullscreen />
+      <NewScroll /> 
+      <NewFullscreen /> */}
+      <NewNotification />
     </div>
   );
 };

@@ -1,7 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-const useNotification = (title, options) => {
+const UseNotification = (title, options) => {
   if (!("Notification" in window)) {
     return;
   }
@@ -21,16 +18,4 @@ const useNotification = (title, options) => {
   return fireNotif;
 };
 
-const App = () => {
-  const triggerNotif = useNotification("Can I steal your kimch?", {
-    body: "I love kimchi dont you",
-  });
-  return (
-    <div className="App" style={{ height: "1000vh" }}>
-      <button onClick={triggerNotif}>Hello</button>
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default UseNotification;
