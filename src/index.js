@@ -18,17 +18,17 @@ import useAxios from "./function/UseAxios";
 const App = () => {
   return (
     <div className="App">
-      {/* <NewInput />
+      <NewInput />
       <NewTabs />
       <NewClick />
       <NewConfirm />
       <NewPreventLeave />
       <NewBeforeLeave />
       <NewFadeIn />
-      <NewNetwork /> 
-      <NewScroll /> 
-      <NewFullscreen /> 
-      <NewNotification /> */}
+      <NewNetwork />
+      <NewScroll />
+      <NewFullscreen />
+      <NewNotification />
       <NewAxios />
     </div>
   );
