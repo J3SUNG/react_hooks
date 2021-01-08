@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import useAxios from "./useAxios";
+import useAxios from "./UseAxios";
 
 const App = () => {
   const { loading, data, error, refetch } = useAxios({
