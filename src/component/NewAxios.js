@@ -1,9 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import useAxios from "./UseAxios";
+import UseAxios from "../function/UseAxios";
 
-const App = () => {
-  const { loading, data, error, refetch } = useAxios({
+const NewAxios = () => {
+  const { loading, data, error, refetch } = UseAxios({
     url:
       "https://cors-anywhere.herokuapp.com/https://yts.am/api/v2/list_movies.json",
   });
@@ -11,10 +10,10 @@ const App = () => {
     <div className="App" style={{ height: "1000vh" }}>
       <h1>{data && data.status}</h1>
       <h2>{loading && "Loading"}</h2>
+      <h2>{error && "Error"}</h2>
       <button onClick={refetch}>Refetch</button>
     </div>
   );
 };
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default NewAxios;
