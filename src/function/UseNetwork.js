@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const UseNetwork = (onChange) => {
   const [status, setStatus] = useState(navigator.onLine);
+  console.log(navigator.onLine);
   const handleChange = () => {
     onChange(navigator.onLine);
     setStatus(navigator.onLine);

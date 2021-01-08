@@ -7,6 +7,7 @@ import NewFadeIn from "./component/NewFadeIn";
 import NewInput from "./component/NewInput";
 import NewNetwork from "./component/NewNetwork";
 import NewPreventLeave from "./component/NewPreventLeave";
+import NewScroll from "./component/NewScroll";
 import NewTabs from "./component/NewTabs";
 
 const App = () => {
@@ -18,8 +19,9 @@ const App = () => {
       <NewConfirm />
       <NewPreventLeave />
       <NewBeforeLeave />
-      <NewFadeIn /> */}
-      <NewNetwork />
+      <NewFadeIn />
+      <NewNetwork /> */}
+      <NewScroll />
     </div>
   );
 };
