@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useState, useEffect } from "react";
 
 const useTitle = (initialTitle) => {
   const [title, setTitle] = useState(initialTitle);
@@ -11,15 +10,4 @@ const useTitle = (initialTitle) => {
   return setTitle;
 };
 
-const App = () => {
-  const titleUpdater = useTitle("Loading...");
-  setTimeout(() => titleUpdater("Home"), 3000);
-  return (
-    <div className="App">
-      <div>Hello</div>
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default useTitle;

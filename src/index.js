@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import useInput from "./useInput";
 import useTabs from "./useTabs";
+import useTitle from "./useTitle";
 
 const content = [
   {
@@ -15,6 +16,8 @@ const content = [
 ];
 
 const App = () => {
+  const titleUpdater = useTitle("Loading...");
+  setTimeout(() => titleUpdater("Home"), 3000);
   const maxLen = (value) => value.length <= 10;
   const name = useInput("Mr.", maxLen);
   const { currentItem, changeItem } = useTabs(0, content);
