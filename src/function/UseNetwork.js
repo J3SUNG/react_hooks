@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useEffect, useState } from "react";
 
-const useNetwork = (onChange) => {
+const UseNetwork = (onChange) => {
   const [status, setStatus] = useState(navigator.onLine);
   const handleChange = () => {
-    if (typeof onChange === "function") {
-      onChange(navigator.onLine);
-    }
+    onChange(navigator.onLine);
     setStatus(navigator.onLine);
   };
   useEffect(() => {
@@ -20,17 +17,4 @@ const useNetwork = (onChange) => {
   return status;
 };
 
-const App = () => {
-  const handleNetworkChange = (online) => {
-    console.log(online ? "We just went online" : "We are offline");
-  };
-  const onLine = useNetwork(handleNetworkChange);
-  return (
-    <div className="App">
-      <h1>{onLine ? "Online" : "Offline"}</h1>
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default UseNetwork;
